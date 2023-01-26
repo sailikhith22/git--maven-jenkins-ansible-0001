@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('SCM-Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'git-credentials', 
+                url: 'https://github.com/gkvmware03/sai-ansible.git'
+            }
+        }
+        stage('Ansible-Deployment') {
+            steps {
+				ansiblePlaybook become: true, credentialsId: 'ec2-user', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts', playbook: 'httpd.yml'
+            }
+        }
+    }
+}
