@@ -4,7 +4,7 @@ pipeline {
         stage('SCM-Checkout') {
             steps {
                 git branch: 'main', credentialsId: 'git-credentials', 
-                url: 'https://github.com/gkvmware03/sai-ansible.git'
+                url: 'https://github.com/sailikhith22/git--maven-jenkins-ansible-0001.git'
             }
         }
         stage('Ansible-Deployment') {
