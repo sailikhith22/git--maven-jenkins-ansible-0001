@@ -3,8 +3,8 @@
   hosts: webservers
 
   tasks:
-- name: Remove httpd
-  yum: pkg=httpd state=absent
+ - name: Remove httpd
+   yum: pkg=httpd state=absent
 
-- name: Install httpd
-  yum: pkg=httpd state=present
+ - name: Install httpd
+   yum: pkg=httpd state=present
