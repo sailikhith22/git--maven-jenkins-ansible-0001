@@ -1,6 +1,9 @@
-- hosts: webservers
-  remote_user: root
+- name: Server Details
+  hosts: Web-server
 
   tasks:
-  - name: ensure apache is at the latest version
-    yum: name=httpd state=latest
+  - name: Remove httpd
+    yum: pkg=httpd state=absent
+
+  - name: Install httpd
+    yum: pkg=httpd state=present
