@@ -1,5 +1,5 @@
 - name: Server Details
-  hosts: 13.232.31.223
+  hosts: [webservers]
 
   tasks:
   - name: Remove httpd
