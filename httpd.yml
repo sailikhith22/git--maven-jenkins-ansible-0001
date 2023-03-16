@@ -1,9 +1,8 @@
-- name: httpd server
-  hosts: webserver
-
+- hosts: webserver
+  vars_files:
+         - variables
   tasks:
-  - name: Remove httpd
-    yum: pkg=httpd state=absent
-
-  - name: Install httpd
-    yum: pkg=httpd state=present
+        - name: "installing httpd"
+          package:
+              name: "httpd"
+              state: present
