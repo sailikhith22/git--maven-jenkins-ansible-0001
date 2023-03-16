@@ -1,5 +1,5 @@
-- name: Server Details
-  hosts: webservers
+- name: httpd server
+  hosts: httpd server
 
   tasks:
   - name: Remove httpd
